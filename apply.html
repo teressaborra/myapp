@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarship Application Form</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .form-row .form-group {
+        width: 48%;
+      }
+      
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      input, textarea, select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      
+      button:hover {
+        background-color: #45a049;
+      }
+      
+      .hidden {
+        display: none;
+      }
+      
+      #successMessage {
+        text-align: center;
+        color: green;
+        margin-top: 20px;
+      }
+
+      .file-upload {
+        padding: 8px;
+        background-color: #f4f4f9;
+        border: 1px solid #ccc;
+        width: 100%;
+      }
+      
+  </style>
+</head>
+
+<body>
+    
+  <div class="container">
+    <h1>Scholarship Application Form</h1>
+    <form id="scholarshipForm" action="submit_application()" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="grade">Current Grade/Level:</label>
+        <input type="text" id="grade" name="grade" required>
+      </div>
+
+      <div class="form-group">
+        <label for="essay">About Yourself:</label>
+        <textarea id="essay" name="essay" rows="5" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="adhaarCard">Upload Aadhaar Card:</label>
+        <input type="file" id="adhaarCard" name="adhaarCard" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label for="rationCard">Upload Ration Card:</label>
+        <input type="file" id="rationCard" name="rationCard" accept=".pdf,.jpg,.png" required>
+      </div>
+      <div class="form-group">
+        <label for="incomeCertificate">Upload Income Certificate:</label>
+        <input type="file" id="incomeCertificate" name="incomeCertificate" accept=".pdf,.jpg,.png" required>
+      </div>
+      <div class="form-group">
+        <label for="marksheet">Upload Marks Sheet (Previous Year):</label>
+        <input type="file" id="marksheet" name="marksheet" accept=".pdf,.jpg,.png" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="attendanceSheet">Upload Attendance Sheet (Previous Year):</label>
+        <input type="file" id="attendanceSheet" name="attendanceSheet" accept=".pdf,.jpg,.png" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fatherName">Father's Name:</label>
+          <input type="text" id="fatherName" name="fatherName" required>
+        </div>
+        <div class="form-group">
+          <label for="fatherOccupation">Father's Occupation:</label>
+          <input type="text" id="fatherOccupation" name="fatherOccupation" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="motherName">Mother's Name:</label>
+          <input type="text" id="motherName" name="motherName" required>
+        </div>
+        <div class="form-group">
+          <label for="motherOccupation">Mother's Occupation:</label>
+          <input type="text" id="motherOccupation" name="motherOccupation" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="annualIncome">Annual Family Income (in INR):</label>
+        <input type="number" id="annualIncome" name="annualIncome" required>
+      </div>
+
+      <!-- Bank Account and IFSC code fields -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bankAccountNumber">Bank Account Number:</label>
+          <input type="text" id="bankAccountNumber" name="bankAccountNumber" required>
+        </div>
+        <div class="form-group">
+          <label for="ifscCode">IFSC Code:</label>
+          <input type="text" id="ifscCode" name="ifscCode" required>
+        </div>
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+    <div id="successMessage" class="hidden">Application submitted successfully!</div>
+  </div>
+
+  <script>
+    document.getElementById("scholarshipForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+  
+      const formData = new FormData(document.getElementById("scholarshipForm"));
+      const data = {
+        fullName: formData.get("fullName"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        grade: formData.get("grade"),
+        essay: formData.get("essay"),
+        adhaarCard: formData.get("adhaarCard").name, // This is just the file name
+        rationCard: formData.get("rationCard").name,
+        incomeCertificate: formData.get("incomeCertificate").name,
+        marksheet: formData.get("marksheet").name,
+        attendanceSheet: formData.get("attendanceSheet").name,
+        fatherName: formData.get("fatherName"),
+        fatherOccupation: formData.get("fatherOccupation"),
+        motherName: formData.get("motherName"),
+        motherOccupation: formData.get("motherOccupation"),
+        annualIncome: formData.get("annualIncome"),
+        bankAccountNumber: formData.get("bankAccountNumber"),
+        ifscCode: formData.get("ifscCode"),
+      };
+  
+      fetch("http://localhost:3000/submit_application", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.message) {
+          document.getElementById("successMessage").classList.remove("hidden");
+        } else {
+          alert("Error submitting the form");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("Error submitting the form");
+      });
+    });
+  </script>
+  
+</body>
+</html>
