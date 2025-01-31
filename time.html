@@ -6,12 +6,12 @@
    <!-- Mobile Metas -->
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <!-- Site Metas -->
-   <title>Induko</title>
+   <title>EduAid</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
    <!-- site icon -->
-   <link rel="icon" href="images/fevicon.png" type="image/png" />
+   <link rel="icon" href="images/logo.png" type="image/png" />
    <!-- Bootstrap core CSS -->
    <link href="css/bootstrap.css" rel="stylesheet">
    <!-- FontAwesome Icons core CSS -->
@@ -30,6 +30,7 @@
    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
    <![endif]-->
+   
    </head>
    <body id="inner_page">
       <!-- header -->
@@ -41,7 +42,7 @@
                <div class="col-lg-3">
                   <div class="full">
                      <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                        <a href="index.html"><img src="images/logo1.jpg" alt="#" /></a>
                      </div>
                   </div>
                </div>
@@ -68,10 +69,10 @@
                                     <a class="nav-link color-grey-hover" href="time.html">Time</a>
                                  </li>-->
                                  <li class="nav-item">
-                                    <a class="nav-link color-grey-hover" href="contact.html">Contact Us</a>
+                                    <a class="nav-link color-grey-hover" href="contact.html">Contact us</a>
                                  </li>
                                  <li class="nav-item">
-                                    <a class="nav-link color-grey-hover" href="apply.html">Apply Now</a>
+                                    <a class="nav-link color-grey-hover" href="time.html">Donate</a>
                                  </li>
                               </ul>
                               <ul class="navbar-nav">
@@ -92,49 +93,91 @@
       <!-- end header -->
       
       <!-- section -->
-      <section class="main_full inner_page">
+   <!--  <section class="main_full inner_page">
         <div class="container-fluid">
           <div class="row">
              <div class="full">
-               <h3>Time</h3>    
+               <h3>Contact</h3>    
              </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- end section -->
-
-      <!-- section -->
-      <section class="layout_padding section padding_bottom_0">
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-lg-12 text_align_center">
-                  <div class="full heading_s1">
-                     <h2>Our Coaching Time</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 cours_timging_bg">
-                 <div class="container">
-                    <div class="time_table">
-                          <ul><li>Monday</li><li>8 Am - 6 Pm</li></ul>
-                          <ul><li>Tuesday</li><li>9 Am - 5 Pm</li></ul>
-                          <ul><li>Wednesday</li><li>10 Am - 8 Pm</li></ul>
-                          <ul><li>Thursday</li><li>8  Am - 6 Pm</li></ul>
-                          <ul><li>Friday</li><li>6 Am - 4 Pm</li></ul>
-                          <ul><li>Saturday</li><li>9 Am - 5 Pm</li></ul>
-                          <ul><li>Sunday</li><li>Holiday</li></ul>
-                       </div>
-                 </div>        
-              </div> 
-            </div>
-         </div>
-      </section>
+    
+    <!-- section -->
+    <section>
+      <div style="max-width: 600px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 0 auto;">
+         <h2 style="font-size: 1.5rem; font-weight: bold; text-align: center; margin-bottom: 1rem;">Make a Donation</h2>
+         <form id="donationForm" style="display: flex; flex-direction: column; gap: 1rem;">
+             <input type="text" name="name" placeholder="Full Name" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+             <input type="email" name="email" placeholder="Email" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+             <input type="number" name="amount" placeholder="Donation Amount ($)" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+             
+             <label style="display: block;">Would you like to make a one-time donation or set up a recurring contribution?</label>
+             <select name="donation_type" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+                 <option value="One-Time">One-Time</option>
+                 <option value="Recurring">Recurring</option>
+             </select>
+             
+             <select name="cause" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+                 <option value="">Select a Cause</option>
+                 <option value="Education Fund">Education Fund</option>
+                 <option value="STEM Scholarships">STEM Scholarships</option>
+                 <option value="Emergency Aid">Emergency Aid</option>
+             </select>
+             
+             <label style="display: block;">Do you want to support a specific student or contribute to a general fund?</label>
+             <select name="fund_type" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+                 <option value="Specific Student">Specific Student</option>
+                 <option value="General Fund">General Fund</option>
+             </select>
+             
+             <input type="text" name="message" placeholder="Leave a message for the student (Optional)" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;">
+             
+             <select name="communication" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+                 <option value="">Preferred Mode of Communication</option>
+                 <option value="Email">Email</option>
+                 <option value="Phone">Phone</option>
+                 <option value="WhatsApp">WhatsApp</option>
+             </select>
+             
+             <label style="display: block;">Would you like to interact with the student you are supporting?</label>
+             <select name="interaction" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+                 <option value="Yes">Yes</option>
+                 <option value="No">No</option>
+             </select>
+             
+             <label style="display: block;">Would you be interested in mentoring students?</label>
+             <select name="mentorship" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+                 <option value="Yes">Yes</option>
+                 <option value="No">No</option>
+             </select>
+             
+             <label style="display: block;">Do you need a tax exemption certificate for your donation?</label>
+             <select name="tax_exemption" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required>
+                 <option value="Yes">Yes</option>
+                 <option value="No">No</option>
+             </select>
+             
+             <label style="display: block;">What motivated you to donate to our platform?</label>
+             <textarea name="motivation" placeholder="Your response" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.25rem;" required></textarea>
+             
+             <button type="submit" style="width: 100%; background-color: #2563eb; color: white; padding: 0.5rem; border-radius: 0.25rem;">Donate Now</button>
+         </form>
+     </div>
+     
+     <script>
+         document.getElementById("donationForm").addEventListener("submit", function(event) {
+             event.preventDefault();
+             alert("Thank you for your donation!");
+             this.reset();
+         });
+     </script>
+    </section>
       <!-- end section -->
   
       <!-- section -->
-      <section class="section blue_pattern_bg" style="background-color: #3b3bff;">
-     
+    
       <!-- end section -->
      
       <!-- footer -->
@@ -143,8 +186,8 @@
             <div class="row">
 
                <div class="col-md-4 col-sm-12">
-                  <a href="index.html"><img class="img-responsive" src="images/logo_footer.png" alt="#" /></a>
-                  <div class="footer_link_heading">
+                  <a href="index.html" style="font-weight: bold; color: white; font-size: 80px; font-style: italic;">EDUAID</a>
+                  <div class="footer_link_heading"> 
                      <div class="footer_menu margin_top_30">
                      <ul>
                         <li><a href="tel:9876543210">9876 543 210</a></li>
@@ -206,15 +249,7 @@
             </div>
          </div>
       </footer>
-      <div class="cpy">
-        <div class="container">
-           <div class="row">
-             <div class="col-md-12">
-               <p>Copyright 2019. All Rights Reserved.<a href="https://html.design/"> Free html Templates</a></p>
-             </div>
-           </div>
-        </div>
-      </div>
+     
       <!-- end footer -->
       <!-- Core JavaScript
          ================================================== -->
