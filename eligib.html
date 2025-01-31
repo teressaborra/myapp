@@ -228,17 +228,18 @@
             let messageClass = "";
 
             if (educationLevel === "" || marks === "" || familyIncome === "") {
-                message = "Please select all the required options before submitting the form.";
-                messageClass = "alert alert-danger";
-            } else {
-                if (marks === "yes" && familyIncome === "yes" && motivation.trim() !== "") {
-                    message = "Congratulations! You meet the eligibility criteria for financial support.";
-                    messageClass = "alert alert-success";
-                } else {
-                    message = "Unfortunately, you do not meet the eligibility criteria. Please check the requirements and try again.";
-                    messageClass = "alert alert-danger";
-                }
-            }
+    message = "Please select all the required options before submitting the form.";
+    messageClass = "alert alert-danger";
+} else {
+    if (marks === "yes" && familyIncome === "yes" && motivation.trim() !== "") {
+        message = "Congratulations! You meet the eligibility criteria for financial support.";
+        messageClass = "alert alert-success";
+        window.location.href = "apply.html"; // Redirect to apply.html
+    } else {
+        message = "Unfortunately, you do not meet the eligibility criteria. Please check the requirements and try again.";
+        messageClass = "alert alert-danger";
+    }
+}
 
             const eligibilityMessage = document.getElementById("eligibility-message");
             eligibilityMessage.className = messageClass;
