@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility Check</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f5f5f5; padding: 20px; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#"></a>
+            </div>
+        </nav>
+    </header>
+
+    <div style="background-color: #fff; border-radius: 8px; padding: 30px; width: 100%; max-width: 500px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div style="text-align: center;">
+            <h1 style="font-size: 24px; color: #333; margin-bottom: 20px;">Eligibility Check</h1>
+            <p style="font-size: 16px; color: #666; margin-bottom: 20px;">Fill out the form below to check if you are eligible for financial support.</p>
+
+            <form action="submit_eligibility.php" method="POST" id="eligibility-form">
+                <div style="margin-bottom: 20px; text-align: left; font-size: 16px;">
+                    <label for="education_level" style="display: block; margin-bottom: 8px; color: #333;">Current Education Level:</label>
+                    <select id="education_level" name="education_level" required style="width: 100%; padding: 10px; margin-top: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="">Select Education Level</option>
+                        <option value="highschool">High School</option>
+                        <option value="undergraduate">Undergraduate</option>
+                        <option value="graduate">Graduate</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 20px; text-align: left; font-size: 16px;">
+                    <label for="marks" style="display: block; margin-bottom: 8px; color: #333;">Have you secured above 65% marks in your previous class?</label>
+                    <select id="marks" name="marks" required style="width: 100%; padding: 10px; margin-top: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="">Select Yes or No</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 20px; text-align: left; font-size: 16px;">
+                    <label for="family_income" style="display: block; margin-bottom: 8px; color: #333;">Is your family income less than ₹8,00,000?</label>
+                    <select id="family_income" name="family_income" required style="width: 100%; padding: 10px; margin-top: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="">Select Yes or No</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 20px; text-align: left; font-size: 16px;">
+                    <label for="motivation" style="display: block; margin-bottom: 8px; color: #333;">Why do you need financial support? (Short Answer)</label>
+                    <textarea id="motivation" name="motivation" rows="4" required style="width: 100%; padding: 10px; margin-top: 8px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" style="width: 100%; padding: 12px; background-color: #4CAF50; color: #fff; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">Check Eligibility</button>
+            </form>
+
+            <div id="eligibility-message" style="margin-top: 20px; font-size: 18px; font-weight: bold; padding: 15px; border-radius: 5px; text-align: center;"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("eligibility-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const educationLevel = document.getElementById("education_level").value;
+            const marks = document.getElementById("marks").value;
+            const familyIncome = document.getElementById("family_income").value;
+            const motivation = document.getElementById("motivation").value;
+
+            let message = "";
+            let messageStyle = "";
+
+            if (educationLevel === "" || marks === "" || familyIncome === "") {
+                message = "Please select all the required options before submitting the form.";
+                messageStyle = "color: red; background-color: #f8d7da;";
+            } else {
+                if (marks === "yes" && familyIncome === "yes" && motivation.trim() !== "") {
+                    message = "Congratulations! You meet the eligibility criteria for financial support.";
+                    messageStyle = "color: green; background-color: #d4edda;";
+                } else {
+                    message = "Unfortunately, you do not meet the eligibility criteria. Please check the requirements and try again.";
+                    messageStyle = "color: red; background-color: #f8d7da;";
+                }
+            }
+
+            const eligibilityMessage = document.getElementById("eligibility-message");
+            eligibilityMessage.style = messageStyle;
+            eligibilityMessage.innerText = message;
+        });
+    </script>
+</body>
+</html>
