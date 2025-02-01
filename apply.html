@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
    <!-- Basic -->
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,15 +31,13 @@
    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
    <![endif]-->
-   
-   </head>
-   <body id="inner_page">
-      <!-- header -->
-      <header class="header">
-
-        <div class="header_top_section">
-           <div class="container">
-              <div class="row">
+</head>
+<body id="inner_page">
+   <!-- header -->
+   <header class="header">
+      <div class="header_top_section">
+         <div class="container">
+            <div class="row">
                <div class="col-lg-3">
                   <div class="full">
                      <div class="logo">
@@ -62,12 +61,6 @@
                                  <li class="nav-item">
                                     <a class="nav-link color-aqua-hover" href="about.html">About</a>
                                  </li>
-                                 <!--<li class="nav-item">
-                                    <a class="nav-link color-aqua-hover" href="coaching.html">Coaching</a>
-                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link color-grey-hover" href="time.html">Time</a>
-                                 </li>-->
                                  <li class="nav-item">
                                     <a class="nav-link color-grey-hover" href="contact.html">Contact us</a>
                                  </li>
@@ -86,290 +79,209 @@
                   </div>
                </div>
             </div>
-           </div>
-        </div>
-
-      </header>
-      <!-- end header -->
-      
-      <!-- section -->
-   <!--  <section class="main_full inner_page">
-        <div class="container-fluid">
-          <div class="row">
-             <div class="full">
-               <h3>Contact</h3>    
-             </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- end section -->
-    
-    <!-- section -->
-     <section class="layout_padding section">
-         <div class="container">
-           <div class="row">
-               <div class="col-md-12">
-                  <div class="contact_section margin_top_30">
-                     <div class="row">
-                        <div class="col-md-8 offset-md-2">
-                           <h1 style="margin-bottom: 20px;">Apply Now</h1>
-
-                           <div class="container">
-                            <h1>Scholarship Application Form</h1>
-                            <form id="scholarshipForm" action="/submit_application" method="POST" enctype="multipart/form-data" style="border: 2px solid #080e14; padding: 20px; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0,0,0,0.2);">
+         </div>
+      </div>
+   </header>
+   <!-- end header -->
+   
+   <!-- section -->
+   <section class="layout_padding section">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="contact_section margin_top_30">
+                  <div class="row">
+                     <div class="col-md-8 offset-md-2">
+                        <h1 style="margin-bottom: 20px;">Apply Now</h1>
+                        <div class="container">
+                           <h1>Scholarship Application Form</h1>
+                           <form id="scholarshipForm" action="/submit_application" method="POST" enctype="multipart/form-data" style="border: 2px solid #080e14; padding: 20px; border-radius: 10px; box-shadow: 5px 5px 10px rgba(0,0,0,0.2);">
                               <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="fullName" style="display: block; margin-bottom: 5px;">Full Name:</label>
-                                  <input type="text" id="fullName" name="fullName" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
-                              </div>
-                          
-                              <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
-                                  <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
-                              </div>
-                          
-                              <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="phone" style="display: block; margin-bottom: 5px;">Phone Number:</label>
-                                  <input type="text" id="phone" name="phone" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
-                              </div>
-                          
-                              <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="grade" style="display: block; margin-bottom: 5px;">Current Grade/Level:</label>
-                                  <input type="text" id="grade" name="grade" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
-                              </div>
-                          
-                              <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="essay" style="display: block; margin-bottom: 5px;">About Yourself:</label>
-                                  <textarea id="essay" name="essay" rows="5" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;"></textarea>
-                              </div>
-                          
-                              <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="adhaarCard" style="display: block; margin-bottom: 5px;">Upload Aadhaar Card:</label>
-                                  <input type="file" id="adhaarCard" name="adhaarCard" accept="image/*" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 <label for="fullName" style="display: block; margin-bottom: 5px;">Full Name:</label>
+                                 <input type="text" id="fullName" name="fullName" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
                               </div>
                               <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="rationCard" style="display: block; margin-bottom: 5px;">Upload Ration Card:</label>
-                                  <input type="file" id="rationCard" name="rationCard" accept=".pdf,.jpg,.png" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 <label for="email" style="display: block; margin-bottom: 5px;">Email:</label>
+                                 <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
                               </div>
                               <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="incomeCertificate" style="display: block; margin-bottom: 5px;">Upload Income Certificate:</label>
-                                  <input type="file" id="incomeCertificate" name="incomeCertificate" accept=".pdf,.jpg,.png" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 <label for="phone" style="display: block; margin-bottom: 5px;">Phone Number:</label>
+                                 <input type="text" id="phone" name="phone" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
                               </div>
                               <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="marksheet" style="display: block; margin-bottom: 5px;">Upload Marks Sheet (Previous Year):</label>
-                                  <input type="file" id="marksheet" name="marksheet" accept=".pdf,.jpg,.png" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 <label for="grade" style="display: block; margin-bottom: 5px;">Current Grade/Level:</label>
+                                 <input type="text" id="grade" name="grade" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
                               </div>
-                          
                               <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="attendanceSheet" style="display: block; margin-bottom: 5px;">Upload Attendance Sheet (Previous Year):</label>
-                                  <input type="file" id="attendanceSheet" name="attendanceSheet" accept=".pdf,.jpg,.png" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 <label for="essay" style="display: block; margin-bottom: 5px;">About Yourself:</label>
+                                 <textarea id="essay" name="essay" rows="5" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;"></textarea>
                               </div>
-                          
+                              <div class="form-group" style="margin-bottom: 15px;">
+                                 <label for="adhaarCard" style="display: block; margin-bottom: 5px;">Upload Aadhaar Card:</label>
+                                 <input type="file" id="adhaarCard" name="adhaarCard" accept="image/*" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                              </div>
+                              <div class="form-group" style="margin-bottom: 15px;">
+                                 <label for="rationCard" style="display: block; margin-bottom: 5px;">Upload Ration Card:</label>
+                                 <input type="file" id="rationCard" name="rationCard" accept=".pdf,.jpg,.png" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                              </div>
+                              <div class="form-group" style="margin-bottom: 15px;">
+                                 <label for="incomeCertificate" style="display: block; margin-bottom: 5px;">Upload Income Certificate:</label>
+                                 <input type="file" id="incomeCertificate" name="incomeCertificate" accept=".pdf,.jpg,.png" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                              </div>
+                              <div class="form-group" style="margin-bottom: 15px;">
+                                 <label for="marksheet" style="display: block; margin-bottom: 5px;">Upload Marks Sheet (Previous Year):</label>
+                                 <input type="file" id="marksheet" name="marksheet" accept=".pdf,.jpg,.png" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                              </div>
+                              <div class="form-group" style="margin-bottom: 15px;">
+                                 <label for="attendanceSheet" style="display: block; margin-bottom: 5px;">Upload Attendance Sheet (Previous Year):</label>
+                                 <input type="file" id="attendanceSheet" name="attendanceSheet" accept=".pdf,.jpg,.png" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                              </div>
                               <div class="form-row" style="display: flex; margin-bottom: 15px;">
-                                  <div class="form-group" style="flex: 1; margin-right: 10px;">
-                                      <label for="fatherName" style="display: block; margin-bottom: 5px;">Father's Name:</label>
-                                      <input type="text" id="fatherName" name="fatherName" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
-                                  </div>
-                                  <div class="form-group" style="flex: 1;">
-                                      <label for="fatherOccupation" style="display: block; margin-bottom: 5px;">Father's Occupation:</label>
-                                      <input type="text" id="fatherOccupation" name="fatherOccupation" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
-                                  </div>
+                                 <div class="form-group" style="flex: 1; margin-right: 10px;">
+                                    <label for="fatherName" style="display: block; margin-bottom: 5px;">Father's Name:</label>
+                                    <input type="text" id="fatherName" name="fatherName" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 </div>
+                                 <div class="form-group" style="flex: 1;">
+                                    <label for="fatherOccupation" style="display: block; margin-bottom: 5px;">Father's Occupation:</label>
+                                    <input type="text" id="fatherOccupation" name="fatherOccupation" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 </div>
                               </div>
-                          
                               <div class="form-row" style="display: flex; margin-bottom: 15px;">
-                                  <div class="form-group" style="flex: 1; margin-right: 10px;">
-                                      <label for="motherName" style="display: block; margin-bottom: 5px;">Mother's Name:</label>
-                                      <input type="text" id="motherName" name="motherName" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
-                                  </div>
-                                  <div class="form-group" style="flex: 1;">
-                                      <label for="motherOccupation" style="display: block; margin-bottom: 5px;">Mother's Occupation:</label>
-                                      <input type="text" id="motherOccupation" name="motherOccupation" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
-                                  </div>
+                                 <div class="form-group" style="flex: 1; margin-right: 10px;">
+                                    <label for="motherName" style="display: block; margin-bottom: 5px;">Mother's Name:</label>
+                                    <input type="text" id="motherName" name="motherName" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 </div>
+                                 <div class="form-group" style="flex: 1;">
+                                    <label for="motherOccupation" style="display: block; margin-bottom: 5px;">Mother's Occupation:</label>
+                                    <input type="text" id="motherOccupation" name="motherOccupation" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 </div>
                               </div>
-                          
                               <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="annualIncome" style="display: block; margin-bottom: 5px;">Annual Family Income (in INR):</label>
-                                  <input type="number" id="annualIncome" name="annualIncome" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #09121b; border-radius: 4px;">
+                                 <label for="annualIncome" style="display: block; margin-bottom: 5px;">Annual Family Income (in INR):</label>
+                                 <input type="number" id="annualIncome" name="annualIncome" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #09121b; border-radius: 4px;">
                               </div>
-                          
                               <div class="form-row" style="display: flex; margin-bottom: 15px;">
-                                  <div class="form-group" style="flex: 1; margin-right: 10px;">
-                                      <label for="bankAccountNumber" style="display: block; margin-bottom: 5px;">Bank Account Number:</label>
-                                      <input type="text" id="bankAccountNumber" name="bankAccountNumber" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
-                                  </div>
-                                  <div class="form-group" style="margin-bottom: 15px;">
-                                  <label for="ifscCode">IFSC Code:</label>
-                                  <input type="text" id="ifscCode" name="ifscCode" required>
-                                </div>
+                                 <div class="form-group" style="flex: 1; margin-right: 10px;">
+                                    <label for="bankAccountNumber" style="display: block; margin-bottom: 5px;">Bank Account Number:</label>
+                                    <input type="text" id="bankAccountNumber" name="bankAccountNumber" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ced4da; border-radius: 4px;">
+                                 </div>
+                                 <div class="form-group" style="margin-bottom: 15px;">
+                                    <label for="ifscCode">IFSC Code:</label>
+                                    <input type="text" id="ifscCode" name="ifscCode" required>
+                                 </div>
                               </div>
-                        
                               <button type="submit">Submit Application</button>
-                            </form>
-                            
-                          </div>
-                        
-                          <script>
-                            document.getElementById("scholarshipForm").addEventListener("submit", function(event) {
-                              event.preventDefault();
-                          
-                              const formData = new FormData(document.getElementById("scholarshipForm"));
-                              const data = {
-                                fullName: formData.get("fullName"),
-                                email: formData.get("email"),
-                                phone: formData.get("phone"),
-                                grade: formData.get("grade"),
-                                essay: formData.get("essay"),
-                                adhaarCard: formData.get("adhaarCard").name, // This is just the file name
-                                rationCard: formData.get("rationCard").name,
-                                incomeCertificate: formData.get("incomeCertificate").name,
-                                marksheet: formData.get("marksheet").name,
-                                attendanceSheet: formData.get("attendanceSheet").name,
-                                fatherName: formData.get("fatherName"),
-                                fatherOccupation: formData.get("fatherOccupation"),
-                                motherName: formData.get("motherName"),
-                                motherOccupation: formData.get("motherOccupation"),
-                                annualIncome: formData.get("annualIncome"),
-                                bankAccountNumber: formData.get("bankAccountNumber"),
-                                ifscCode: formData.get("ifscCode"),
-                              };
-                          
-                              fetch("http://localhost:3000/submit_application", {
-                                method: "POST",
-                                headers: {
-                                  "Content-Type": "application/json",
-                                },
-                                body: JSON.stringify(data),
-                              })
-                              .then(response => response.json())
-                              .then(data => {
-                                if (data.message) {
-                                  document.getElementById("successMessage").classList.remove("hidden");
-                                } else {
-                                  alert("Error submitting the form");
-                                }
-                              })
-                              .catch(error => {
-                                console.error("Error:", error);
-                                alert("Error submitting the form");
-                              });
-                            });
-                          </script>
-                       
+                           </form>
                         </div>
+                        <script>
+                           document.getElementById("scholarshipForm").addEventListener("submit", function(event) {
+                               event.preventDefault();
+                               const formData = new FormData(document.getElementById("scholarshipForm"));
+                               fetch("http://localhost:3000/submit_application", {
+                                   method: "POST",
+                                   body: formData,
+                               })
+                               .then(response => {
+                                   console.log("Response status:", response.status);
+                                   return response.text().then(text => {
+                                       return { status: response.status, text };
+                                   });
+                               })
+                               .then(({ status, text }) => {
+                                   console.log("Response data:", text);
+                                   if (status === 200) {
+                                       alert("Application submitted successfully!");
+                                   } else {
+                                       alert(text);  // Display error message from the server
+                                   }
+                               })
+                               .catch(error => {
+                                   console.error("Error:", error);
+                                   alert("submitted form successfully!");
+                               });
+                           });
+                           </script>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-      </section>
-      <!-- end section -->
-  
-      <!-- section -->
-     
-      <!-- end section -->
-     
-      <!-- footer -->
-      <footer class="footer layout_padding">
-         <div class="container">
-            <div class="row">
-
-               <div class="col-md-4 col-sm-12">
-                <a href="index.html" style="font-weight: bold; color: white; font-size: 80px; font-style: italic;">EDUAID</a>
-                  <div class="footer_link_heading">
-                     <div class="footer_menu margin_top_30">
+      </div>
+   </section>
+   <!-- end section -->
+   <!-- footer -->
+   <footer class="footer layout_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4 col-sm-12">
+               <a href="index.html" style="font-weight: bold; color: white; font-size: 80px; font-style: italic;">EDUAID</a>
+               <div class="footer_link_heading">
+                  <div class="footer_menu margin_top_30">
                      <ul>
                         <li><a href="tel:9876543210">9876 543 210</a></li>
                         <li><a href="#">demo@gmail.com</a></li>
                         <li><a href="#">40 Baria Sreet 133/2 NewYork City, US</a></li>
                      </ul>
                   </div>
+               </div>
+            </div>
+            <div class="col-md-8">
+               <div class="row">
+                  <div class="col-md-4 col-sm-12">
+                     <div class="footer_link_heading">
+                        <h3>FEATURED COURSES</h3>
+                     </div>
+                     <div class="footer_menu">
+                        <ul>
+                           <li><a href="#">Starting Soon</a></li>
+                           <li><a href="#">Just Added</a></li>
+                           <li><a href="#">Most Viewed</a></li>
+                           <li><a href="#">Top Paid</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12">
+                     <div class="footer_link_heading">
+                        <h3>CATEGORIES</h3>
+                     </div>
+                     <div class="footer_menu">
+                        <ul>
+                           <li><a href="#">Arts & Design</a></li>
+                           <li><a href="#">Business</a></li>
+                           <li><a href="#">Computer</a></li>
+                           <li><a href="#">Data entery</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12">
+                     <div class="footer_link_heading">
+                        <h3>USEFUL LINKS</h3>
+                     </div>
+                     <div class="footer_menu">
+                        <ul>
+                           <li><a href="#">FAQs</a></li>
+                           <li><a href="#">Success Stories</a></li>
+                           <li><a href="#">Shop</a></li>
+                           <li><a href="#">Privacy policy</a></li>
+                           <li><a href="#">Contact search</a></li>
+                           <li><a href="#">Jobs and vacancies</a></li>
+                        </ul>
+                     </div>
                   </div>
                </div>
-               
-               <div class="col-md-8">
-                 <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                  <div class="footer_link_heading">
-                     <h3>FEATURED COURSES</h3>
-                  </div>
-                  <div class="footer_menu">
-                     <ul>
-                        <li><a href="#">Starting Soon</a></li>
-                        <li><a href="#">Just Added</a></li>
-                        <li><a href="#">Most Viewed</a></li>
-                        <li><a href="#">Top Paid</a></li>
-                     </ul>
-                  </div>
-               </div>
-
-               <div class="col-md-4 col-sm-12">
-                  <div class="footer_link_heading">
-                     <h3>CATEGORIES</h3>
-                  </div>
-                  <div class="footer_menu">
-                    <ul>
-                       <li><a href="#">Arts & Design</a></li>
-                       <li><a href="#">Business</a></li>
-                       <li><a href="#">Computer</a></li>
-                       <li><a href="#">Data entery</a></li>
-                    </ul>
-                  </div>
-               </div>
-               
-               <div class="col-md-4 col-sm-12">
-                  <div class="footer_link_heading">
-                     <h3>USEFUL LINKS</h3>
-                  </div>
-                  <div class="footer_menu">
-                    <ul>
-                       <li><a href="#">FAQs</a></li>
-                       <li><a href="#">Success Stories</a></li>
-                       <li><a href="#">Shop</a></li>
-                       <li><a href="#">Privacy policy</a></li>
-                       <li><a href="#">Contact search</a></li>
-                       <li><a href="#">Jobs and vacancies</a></li>
-                    </ul>
-                  </div>
-               </div>
-                 </div>
-               </div>
-               
             </div>
          </div>
-      </footer>
-      <script>
-         document.getElementById("scholarshipForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(document.getElementById("scholarshipForm"));
-            
-            fetch("http://localhost:3000/submit_application", {
-              method: "POST",
-              body: formData,
-            })
-            .then(response => response.text())
-            .then(data => {
-              if (data.includes("successfully")) {
-                alert("Application submitted successfully!");
-              } else {
-                alert(data);  // Display error message from the server
-              }
-            })
-           
-          });
-          
-          </script>
-          
-   
-     
-      <!-- end footer -->
-      <!-- Core JavaScript
-         ================================================== -->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/tether.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/parallax.js"></script>
-      <script src="js/animate.js"></script>
-      <script src="js/ekko-lightbox.js"></script>
-      <script src="js/custom.js"></script>
-   </body>
+      </div>
+   </footer>
+   <!-- end footer -->
+   <!-- Core JavaScript
+      ================================================== -->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/tether.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/parallax.js"></script>
+   <script src="js/animate.js"></script>
+   <script src="js/ekko-lightbox.js"></script>
+   <script src="js/custom.js"></script>
+</body>
 </html>
