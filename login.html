@@ -112,13 +112,13 @@
     <script>
         const form = document.getElementById('loginForm');
         const errorMessage = document.getElementById('errorMessage');
-
+    
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-
+    
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-
+    
             try {
                 const response = await fetch('/login', {
                     method: 'POST',
@@ -127,12 +127,13 @@
                     },
                     body: JSON.stringify({ email, password })
                 });
-
+    
                 const data = await response.json();
-
+    
                 if (response.ok) {
-                    console.log('Login successful:', data);
-                    // Redirect or do something after successful login
+                    alert("Login successful!");
+                    // Redirect to dashboard or another page if needed
+                    window.location.href = "dashboard.html"; 
                 } else {
                     errorMessage.textContent = data.message || 'Login failed';
                 }
@@ -142,5 +143,6 @@
             }
         });
     </script>
+    
 </body>
 </html>

@@ -42,7 +42,7 @@
                <div class="col-lg-3">
                   <div class="full">
                      <div class="logo">
-                        <a href="index.html"><img src="images/logo1.jpg" alt="#" /></a>
+                        <a href="index.html"><img src="images/logo1.jpg" alt="#" height="100" width="100"/></a>
                      </div>
                   </div>
                </div>
@@ -167,12 +167,56 @@
      </div>
      
      <script>
-         document.getElementById("donationForm").addEventListener("submit", function(event) {
-             event.preventDefault();
-             alert("Thank you for your donation!");
-             this.reset();
-         });
-     </script>
+      document.getElementById("donationForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        
+        try {
+          // Disable submit button to prevent double submission
+          const submitButton = this.querySelector('button[type="submit"]');
+          submitButton.disabled = true;
+          submitButton.textContent = 'Processing...';
+      
+          // Gather form data
+          const formData = new FormData(this);
+          const donationData = Object.fromEntries(formData.entries());
+      
+          // Validate amount is a number
+          donationData.amount = parseFloat(donationData.amount);
+          if (isNaN(donationData.amount) || donationData.amount <= 0) {
+            throw new Error('Please enter a valid donation amount');
+          }
+      
+          // Make API request
+          const response = await fetch('http://localhost:5000/api/donate', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(donationData),
+          });
+      
+          const result = await response.json();
+      
+          if (!response.ok) {
+            throw new Error(result.message || 'Failed to process donation');
+          }
+      
+          // Show success message
+          alert('Thank you for your donation!');
+          this.reset();
+      
+        } catch (error) {
+          console.error('Error:', error);
+          alert(error.message || 'There was an error processing your donation. Please try again.');
+        } finally {
+          // Re-enable submit button
+          const submitButton = this.querySelector('button[type="submit"]');
+          submitButton.disabled = false;
+          submitButton.textContent = 'Donate Now';
+        }
+      });
+      </script>
+      
     </section>
       <!-- end section -->
   
@@ -260,5 +304,7 @@
       <script src="js/animate.js"></script>
       <script src="js/ekko-lightbox.js"></script>
       <script src="js/custom.js"></script>
+      <script src="js/donor.js"></script>
+
    </body>
 </html>

@@ -95,7 +95,7 @@ a:hover {
 <body>
 
     <div class="container">
-        <form action="#" method="POST" class="form-container">
+        <form action='/signup' method="POST" class="form-container">
             <h2>Sign Up</h2>
 
             <!-- Username -->
@@ -134,5 +134,42 @@ a:hover {
         </form>
     </div>
 
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", async (e) => {
+            e.preventDefault(); // Prevent page refresh
+    
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm_password").value;
+    
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+    
+            try {
+                const response = await fetch("http://localhost:3001/signup", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, email, phone, password }),
+                });
+    
+                const data = await response.json();
+    
+                if (response.ok) {
+                    alert("Signup successful!");
+                    window.location.href = "login.html";
+                } else {
+                    alert(data.message || "Signup failed");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred. Check console for details.");
+            }
+        });
+    </script>
+    
 </body>
 </html>
